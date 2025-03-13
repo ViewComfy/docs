@@ -32,17 +32,17 @@
                             {
                                 "group": "API",
                                 "pages": [
-                                    "api/api",
-                                    "api/memory_snapshot"
+                                    "/api/api",
+                                    "/api/memory_snapshot"
                                 ]
                             },
-                            "billing/billing"
+                            "/billing/billing"
                         ]
                     },
                     {
                         "group": "FAQs",
                         "pages": [
-                            "faqs/faqs"
+                            "/faqs/faqs"
                         ]
                     }
                 ]

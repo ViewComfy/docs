@@ -62,5 +62,25 @@
                 }
             ]
         }
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Support",
+                "href": "mailto:team@viewcomfy.com"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Dashboard",
+            "href": "https://app.viewcomfy.com"
+        }
+    },
+    "footer": {
+        "socials": {
+            "x": "https://x.com/viewcomfy",
+            "github": "https://github.com/viewcomfy",
+            "linkedin": "https://linkedin.com/company/viewcomfy"
+        }
     }
 }

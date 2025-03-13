@@ -1,0 +1,32 @@
+{
+    "name": "ViewComfy",
+    "theme": "mint",
+    "logo": {
+        "light": "/viewcomfy_logo.svg",
+        "dark": "/viewcomfy_logo.svg",
+        "href": "https://viewcomfy.com"
+    },
+    "favicon": "/favicon.ico",
+    "colors": {
+        "primary": "#2AB673",
+        "light": "#55D799",
+        "dark": "#117866"
+    },
+    "navigation": {
+        "tabs": [
+            {
+                "tab": "Guides",
+                "groups": [
+                    {
+                        "group": "Get Started",
+                        "pages": [
+                            "introduction",
+                            "quickstart",
+                            "development"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

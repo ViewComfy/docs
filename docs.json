@@ -26,23 +26,24 @@
                         ]
                     },
                     {
-                        "group": "Documentation",
+                        "group": "Cloud",
                         "pages": [
-                            "deployment/deployment",
+                            "/cloud/deployment/deployment",
                             {
                                 "group": "API",
                                 "pages": [
-                                    "/api/api",
-                                    "/api/memory_snapshot"
+                                    "/cloud/api/api",
+                                    "/cloud/api/memory_snapshot"
                                 ]
                             },
-                            "/billing/billing"
+                            "/cloud/billing/billing",
+                            "/cloud/faqs/faqs"
                         ]
                     },
                     {
-                        "group": "FAQs",
+                        "group": "ViewComfy App Builder",
                         "pages": [
-                            "/faqs/faqs"
+                            "/app-builder/getting_started"
                         ]
                     }
                 ]

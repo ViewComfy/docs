@@ -24,9 +24,31 @@
                             "quickstart",
                             "development"
                         ]
+                    },
+                    {
+                        "group": "Documentation",
+                        "pages": [
+                            "deployment/deployment",
+                            "api/api",
+                            "billing/billing"
+                        ]
                     }
                 ]
             }
-        ]
+        ],
+        "global": {
+            "anchors": [
+                {
+                    "anchor": "Community",
+                    "href": "https://discord.gg/ZNhpPrv6uS",
+                    "icon": "discord"
+                },
+                {
+                    "anchor": "Blog",
+                    "href": "https://www.viewcomfy.com/blog",
+                    "icon": "newspaper"
+                }
+            ]
+        }
     }
 }

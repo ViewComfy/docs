@@ -18,8 +18,17 @@
                 "tab": "Guides",
                 "groups": [
                     {
+                        "group": "Get Started",
+                        "pages": [
+                            "introduction",
+                            "quickstart",
+                            "development"
+                        ]
+                    },
+                    {
                         "group": "Cloud",
                         "pages": [
+                            "/cloud/deployment/deployment",
                             {
                                 "group": "Serverless API",
                                 "pages": [

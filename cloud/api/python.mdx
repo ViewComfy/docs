@@ -1,0 +1,16 @@
+We offer a Python code to get the API working out of the box. You can find it [here](https://github.com/ViewComfy/cloud-public/tree/main/ViewComfy_API).
+
+You only need to download the api.py code and the requirements.txt file, and you can use that in your project.
+
+the api.py code relies on the httpx library, so you will need to install it first:
+
+```bash
+pip install httpx==0.28.1
+```
+
+The [workflow_parameters_maker.py](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/workflow_parameters_maker.py) will help you get the parameters of your workflow_api.json
+
+```bash
+python workflow_parameters_maker.py --workflow_api_path "<Path to your workflow_api.json file>"
+```
+

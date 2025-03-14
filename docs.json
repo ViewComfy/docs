@@ -6,7 +6,7 @@
         "dark": "/viewcomfy_logo.svg",
         "href": "https://viewcomfy.com"
     },
-    "favicon": "favicon.ico",
+    "favicon": "/favicon.ico",
     "colors": {
         "primary": "#2AB673",
         "light": "#55D799",

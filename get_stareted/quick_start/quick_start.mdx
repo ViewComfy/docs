@@ -1,0 +1,56 @@
+## Deploying Your Workflow
+
+1. Login to the ViewComfy [dashboard](https://app.viewcomfy.com/)
+2. Deploy your `workflow_api.json` file under the "Deploy your own" or use a Templates such as the "ComfyUI: Base Installation" to build a workflow from scratch
+3. Once deployment is complete, access the ComfyUI interface
+   - Note: The interface will initially show the default workflow
+   - To load your workflow, drag and drop your `workflow_api.json/workflow.json` file onto the canvas
+   - You can find your file in the "Your Workflows" tab under "Workflow Files"
+
+4. Test your workflow in the ComfyUI interface to verify everything works correctly
+   - The Manager is fully functional for installing custom nodes, pip packages and models
+   - Add models through the dashboard using the "Add a Model" button in the "Your Workflows" tab
+
+## Storage and Models
+
+- All workflows within a team share the same model storage
+- Models downloaded for one workflow can be used in others without re-downloading
+- The ComfyUI input folder uses shared storage with the same properties as the model storage
+
+## API and Value Management
+When running your workflow through our API or ViewComfy Web app:
+- By default, the workflow_api.json you used at deployment, with all of it's values will be run.
+- Provided values will override the `workflow_api.json` default values.
+- Any unspecified values will use the defaults from the original `workflow_api.json`
+
+## Building Your ViewComfy Web App
+
+You have two options:
+1. Clone the project from [GitHub](https://github.com/ViewComfy/ViewComfy)
+2. Use the [online editor](https://editor.viewcomfy.com/)
+   - Note: The online editor currently doesn't support workflow playground testing
+   - For full playground functionality, use the local version
+
+## Deploying your ViewComfy App
+
+1. After workflow deployment:
+   - Get your API keys from the "Your Workflows" tab
+   - Copy the "API Endpoint" URL to the ViewComfy App's Endpoint field
+
+2. Finalizing your app:
+   - Download the `view_comfy.json` file from the editor
+   - Go to ViewComfy Apps in the dashboard
+   - Click "Deploy App"
+
+## Team Management
+
+- Use the "Invite Users" button in "ViewComfy Apps" tab to add team members
+- Team members must accept invitations to access the app
+- Team members added that way can only access the app, not the dashboard
+
+## Additional Resources
+
+Learn more with these guides:
+- [Complete Guide: Deploy Workflow & Create ViewComfy App](https://www.viewcomfy.com/blog/build-and-deploy-a-comfyui-powered-app-a-complete-guide)
+  - Follow until step 3 for cloud deployment
+- [Customize Web App UI](https://www.viewcomfy.com/blog/comfyui-to-web-app-in-less-than-5-minutes)

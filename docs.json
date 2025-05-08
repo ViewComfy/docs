@@ -18,6 +18,12 @@
                 "tab": "Guides",
                 "groups": [
                     {
+                        "group": "Get Started",
+                        "pages": [
+                            "/get_stareted/quick_start/quick_start"
+                        ]
+                    },
+                    {
                         "group": "Cloud",
                         "pages": [
                             {

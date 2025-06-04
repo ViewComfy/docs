@@ -36,15 +36,33 @@
                                     "/cloud/api/auto_scale",
                                     "/cloud/api/memory_snapshot"
                                 ]
-                            },
-                            "/cloud/billing/billing",
-                            "/cloud/faqs/faqs"
+                            }
                         ]
                     },
                     {
                         "group": "ViewComfy App Builder",
                         "pages": [
                             "/app-builder/getting_started"
+                        ]
+                    },
+                    {
+                        "group": "Storage",
+                        "pages": [
+                            "/storage/description",
+                            "/storage/models",
+                            "/storage/outputs"
+                        ]
+                    },
+                    {
+                        "group": "Account",
+                        "pages": [
+                            "/account/billing"
+                        ]
+                    },
+                    {
+                        "group": "FAQs",
+                        "pages": [
+                            "/faqs/faqs"
                         ]
                     }
                 ]

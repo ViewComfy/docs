@@ -41,7 +41,7 @@
                         ]
                     },
                     {
-                        "group": "api",
+                        "group": "API",
                         "pages": [
                             "/new_api/description",
                             "/new_api/quick_start",

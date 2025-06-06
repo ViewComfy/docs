@@ -1,0 +1,11 @@
+To add a model to your deployment, you simply need to click on the "Add a model" button next to it and put the download URL. 
+
+We support download URLs from HuggingFace, CivitAI and any custom bucket you might have. In most cases, you will also need to add a token for the download to happen. The main exception to that rule is public models from HuggingFace; for those, you won't need a token. 
+
+![Adding models to deployment](/public/add_a_model_to_your_comfy_cloud_installation.webp)
+
+If you want to add a private model from your local computer, we recommend first uploading it to HuggingFace and downloading it from there. 
+
+[This](https://youtu.be/sRticjuabVQ) video goes through all the processes one step at a time (including how to upload a private model to Huggingface).  
+
+All deployments in a team share the same model volume, meaning that if you add a model to one deployment, that model will be available to all present and future deployments inside your team.  

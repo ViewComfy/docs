@@ -20,29 +20,46 @@
                     {
                         "group": "Get Started",
                         "pages": [
-                            "/get_stareted/quick_start/quick_start"
+                            "/get_started/introduction",
+                            "/get_started/quick_start"
                         ]
                     },
                     {
-                        "group": "Cloud",
+                        "group": "Deployments",
                         "pages": [
+                            "/deployments/description",
+                            "/deployments/create_a_deployment_(deploy_a_workflow)",
+                            "/deployments/using_the_manager",
+                            "/deployments/adding_models",
+                            "/deployments/updating_the_gpu"
+                        ]
+                    },
+                    {
+                        "group": "Comfy Workspace",
+                        "pages": [
+                            "/comfy_workspace/description"
+                        ]
+                    },
+                    {
+                        "group": "API",
+                        "pages": [
+                            "/api/description",
+                            "/api/quick_start",
                             {
-                                "group": "Serverless API",
+                                "group": "Examples",
                                 "pages": [
-                                    "/cloud/api/api",
-                                    "/cloud/api/quick_start",
-                                    "/cloud/api/python",
-                                    "/cloud/api/typescript",
-                                    "/cloud/api/auto_scale",
-                                    "/cloud/api/memory_snapshot"
+                                    "/api/examples/python",
+                                    "/api/examples/typescript"
                                 ]
-                            }
+                            },
+                            "/api/autoscaling",
+                            "/api/memory_snapshot"
                         ]
                     },
                     {
-                        "group": "ViewComfy App Builder",
+                        "group": "ViewComfy Apps",
                         "pages": [
-                            "/app-builder/getting_started"
+                            "/viewcomfy_apps/description"
                         ]
                     },
                     {

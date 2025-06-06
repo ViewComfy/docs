@@ -45,6 +45,7 @@
                         "pages": [
                             "/api/description",
                             "/api/quick_start",
+                            "/api/newpage",
                             {
                                 "group": "Examples",
                                 "pages": [

@@ -37,7 +37,8 @@
                     {
                         "group": "Comfy Workspace",
                         "pages": [
-                            "/comfy_workspace/description"
+                            "/comfy_workspace/description",
+                            "/api/description"
                         ]
                     },
                     {

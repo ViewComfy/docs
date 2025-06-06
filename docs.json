@@ -41,9 +41,19 @@
                         ]
                     },
                     {
-                        "group": "new_api",
+                        "group": "api",
                         "pages": [
-                            "/new_api/new_description"
+                            "/new_api/description",
+                            "/new_api/quick_start",
+                            {
+                                "group": "Examples",
+                                "pages": [
+                                    "/new_api/examples/python",
+                                    "/new_api/examples/typescript"
+                                ]
+                            },
+                            "/new_api/autoscaling",
+                            "/new_api/memory_snapshot"
                         ]
                     },
                     {
@@ -51,7 +61,6 @@
                         "pages": [
                             "/api/description",
                             "/api/quick_start",
-                            "/api/newpage",
                             {
                                 "group": "Examples",
                                 "pages": [

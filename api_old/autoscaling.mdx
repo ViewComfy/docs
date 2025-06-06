@@ -1,0 +1,35 @@
+---
+title: Auto Scaling up and down
+---
+
+The ViewComfy Serverless API can automatically scales up and down based on the demand.
+
+the parameters to configure the auto scaling are:
+
+- queue size: the number of requests that can be in the queue at the same time.
+- max number of GPUs: the maximum number of GPUs that can be turned on.
+- min number of GPUs: the minimum number of GPUs that can be turned on if this value is greater than 0 your users will never get a cold-start but the billing will be higher.
+- idle time: the number of seconds of idle time before the GPUs are turned off, by default it is 30 seconds.
+
+
+The scalability works like this:
+When there is a backlog of inputs enqueued, the number of GPUs scales up automatically. You can configure how many requests will be in the queue until the new GPU turns on.
+
+Example 1:
+```
+queue size: 1
+number of requests in the queue: 10
+max number of GPUs: 4.
+min number of GPUs: 0
+```
+
+Let's say you get 10 requests at the same time. 4 GPUs will be turned on and process the job. Each time a GPU finishes a job, it will get a new one from the queue until there is a threshold of 30 seconds of idle time, at which point they will be shut down until there are 0 GPUs turned on.
+
+Example 2:
+```
+queue size: 2
+number of requests in the queue: 2
+max number of GPUs: 4.
+min number of GPUs: 0
+```
+In this case, because the queue size is not bigger than your queue size, only 1 GPU will be running and the second request will wait until the first 1 finish, if a new request comes in, a new GPU will be turn on and it will start processing jobs in the order they arrived, until there is a threshold of 30 seconds of idle time, at which point they will be shut down until there are 0 GPUs turned on.

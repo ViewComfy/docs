@@ -45,6 +45,13 @@
                         "pages": [
                             "/api/description",
                             "/api/quick_start",
+                            {
+                                "group": "Examples",
+                                "pages": [
+                                    "/api/examples/python",
+                                    "/api/examples/typescript"
+                                ]
+                            },
                             "/api/autoscaling",
                             "/api/memory_snapshot"
                         ]

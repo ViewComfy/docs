@@ -1,0 +1,284 @@
+Building a ViewComfy app is a simple process and can be done via our online [editor](https://editor.viewcomfy.com/) or locally with our [open source solution](https://github.com/ViewComfy/ViewComfy). 
+
+## Building the app
+
+To get started, you need to use the workflow_api.json file from the workflow you want to turn into an app. There are more details on how to get that file [here](/deployments/create_a_deployment_(deploy_a_workflow)). 
+
+Once you have the file ready, you just need to drop it in the editor. 
+
+![ViewComfy app editor](/public/viewcomfy_app_editor.webp)
+
+After clicking "Save changes", you can add more workflows to the same app by using the "Add Workflow" button.
+
+## Editing the app 
+
+![ViewComfy app editor](/public/viewcomfy_app_editor_2.webp)
+
+The "App Title" and "App Image URL" allow you to brand your app. Note that you need to provide a URL for the image, meaning it needs to be hosted somewhere. 
+
+The "Title" will be the name of your workflow. If you have multiple ones, they will appear in a drop-down at the top. 
+
+The "ViewComfy Endpoint" is the API link to your [deployment](/deployments/description). This is required if you are planning to deploy the app on ViewComfy cloud. The deployment is where the workflow will run (ei. generate content).
+
+![ViewComfy API](/public/viewcomfy_api.webp) 
+
+By default, the editor will load all the parameters in the workflow. You can remove parameters by clicking the bin icon next to each of them. 
+
+You can also add preview images to show your users the kind of output the app will generate. Again, you will need a URL to add the images.  
+
+## Editing the app (Advanced) 
+
+It is also possible to make more advanced edits to the apps by making changes directly in the view_comfy.json file. If you use Cursor, you can use our [Cursor Rule](https://github.com/ViewComfy/ViewComfy/blob/main/.cursor/rules/view-comfy-json-rules.mdc) to help you. (we have some examples on how to do that [here](https://www.viewcomfy.com/blog/comfyui-to-web-app-in-less-than-5-minutes)).
+
+We also have a [video guide](https://youtu.be/70h0FUohMlE) on how to do some of those advanced edits. 
+
+You can download the view_comfy.json file from the editor ("Download as ViewComfy JSON"). 
+
+The section of the json file called "viewComfyJSON" is what defines the UI elements inside the app. More specifically, the "input" and "advancedInputs" sections are the ones that define the parameters.
+
+```json
+"viewComfyJSON": {
+    "title": "Controlnet",
+    "description": "",
+    "viewcomfyEndpoint": "https://viewcomfy--108-3-td5l2v-comfyui-infer.modal.run",
+    "previewImages": [
+        null,
+        null,
+        null
+    ],
+    "inputs": [
+    {
+    "title": "Load Image",
+    "inputs": [
+        {
+        "title": "Load Image",
+        "placeholder": "Load Image",
+        "value": null,
+        "workflowPath": [
+            "17",
+            "inputs",
+            "image"
+        ],
+        "helpText": "Helper Text",
+        "valueType": "image",
+        "validations": {
+            "required": true
+        },
+        "key": "17-inputs-image"
+        }
+    ],
+    "key": "17-LoadImage"
+    },
+    {
+    "title": "CLIP Text Encode (Positive Prompt)",
+    "inputs": [
+        {
+        "title": "CLIP Text Encode (Positive Prompt)",
+        "placeholder": "CLIP Text Encode (Positive Prompt)",
+        "value": "A picture of the ViewComfy jersey",
+        "workflowPath": [
+            "23",
+            "inputs",
+            "text"
+        ],
+        "helpText": "Helper Text",
+        "valueType": "long-text",
+        "validations": {
+            "required": true
+        },
+        "key": "23-inputs-text"
+        }
+    ],
+    "key": "23-CLIPTextEncode"
+    }
+    ],
+    "advancedInputs": [
+        {
+        "title": "String",
+        "inputs": [
+            {
+            "title": "Value",
+            "placeholder": "Value",
+            "value": "Depth",
+            "workflowPath": [
+                "37",
+                "inputs",
+                "value"
+            ],
+            "helpText": "Helper Text",
+            "valueType": "string",
+            "validations": {
+                "required": true
+            },
+            "key": "37-inputs-value"
+            }
+        ],
+        "key": "37-String"
+        }
+    ],
+    "id": "452c9cee8f9128"
+}
+```
+
+The key things to know are: 
+- The input name in the UI is the input "title"
+- Default values are stored in "value"
+- The UI will render the inputs in the same order as in the json
+- You can create dropdowns by changing the input type to select and adding a list of labels.
+
+So, for example, you can rename the "CLIP Text Encode (Positive Prompt)" input to "prompt" and remove the default value by changing that input to: 
+
+
+```json
+{
+    "title": "Prompt",
+    "placeholder": "Write a prompt",
+    "value": "",
+    "workflowPath": [
+        "23",
+        "inputs",
+        "text"
+    ],
+    "helpText": "Helper Text",
+    "valueType": "long-text",
+    "validations": {
+        "required": true
+    },
+    "key": "23-inputs-text"
+}
+```
+
+You can create a dropdown for the "String" input where users will be able to select between two types of controlnets by changing the value type for that input to "select", and adding a list of option (the label is what will show in the UI and the value is what will be sent to the node.) 
+
+
+```json
+{
+    "title": "String",
+    "inputs": [
+        {
+        "title": "Value",
+        "placeholder": "Value",
+        "value": "Depth",
+        "workflowPath": [
+            "37",
+            "inputs",
+            "value"
+        ],
+        "helpText": "Helper Text",
+        "valueType": "select",
+        "options": [
+            {
+            "label": "Depth",
+            "value": "Depth"
+            },
+            {
+            "label": "Canny",
+            "value": "Canny"
+            }
+        ],
+        "validations": {
+            "required": true
+        },
+        "key": "37-inputs-value"
+        }
+    ],
+    "key": "37-String"
+}
+```
+
+
+And finally, you can rename that input to "Controlnet type" and bring it to the top (and outside of the advanced input section), so that the viewComfyJSON section of the json ends up looking like this: 
+
+```json
+"viewComfyJSON": {
+    "title": "Controlnet",
+    "description": "",
+    "viewcomfyEndpoint": "https://viewcomfy--1594-1369-mb0g8a-comfyui-infer.modal.run",
+    "previewImages": [
+        null,
+        null,
+        null
+    ],
+    "inputs": [
+        {
+        "title": "Controlnet type",
+        "inputs": [
+            {
+            "title": "Controlnet type",
+            "placeholder": "Controlnet type",
+            "value": "Depth",
+            "workflowPath": [
+                "37",
+                "inputs",
+                "value"
+            ],
+            "helpText": "Helper Text",
+            "valueType": "select",
+            "options": [
+                {
+                "label": "Depth",
+                "value": "Depth"
+                },
+                {
+                "label": "Canny",
+                "value": "Canny"
+                }
+            ],
+            "validations": {
+                "required": true
+            },
+            "key": "37-inputs-value"
+            }
+        ],
+        "key": "37-String"
+        },
+        {
+        "title": "Prompt",
+        "inputs": [
+            {
+            "title": "Prompt",
+            "placeholder": "Write a prompt",
+            "value": "",
+            "workflowPath": [
+                "23",
+                "inputs",
+                "text"
+            ],
+            "helpText": "Helper Text",
+            "valueType": "long-text",
+            "validations": {
+                "required": true
+            },
+            "key": "23-inputs-text"
+            }
+        ],
+        "key": "23-CLIPTextEncode"
+        },
+        {
+        "title": "Image",
+        "inputs": [
+            {
+            "title": "Image",
+            "placeholder": "Image",
+            "value": null,
+            "workflowPath": [
+                "17",
+                "inputs",
+                "image"
+            ],
+            "helpText": "Helper Text",
+            "valueType": "image",
+            "validations": {
+                "required": true
+            },
+            "key": "17-inputs-image"
+            }
+        ],
+        "key": "17-LoadImage"
+        }
+    ],
+    "advancedInputs": [
+    ],
+    "id": "452c9cee8f9128"
+}
+```

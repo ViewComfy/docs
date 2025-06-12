@@ -12,6 +12,12 @@
         "light": "#55D799",
         "dark": "#117866"
     },
+    "seo": {
+        "metatags": {
+            "og:image": "/public/ViewComfy_logo.webp",
+            "description":"Everything you need to use ViewComfy to scale your ComfyUI operations."
+        }
+    },
     "navigation": {
         "tabs": [
             {

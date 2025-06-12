@@ -1,0 +1,31 @@
+Most deployment issues can easily be fixed using the Comfy interface.
+
+The first thing to do if you are having problems running a workflow on ViewComfy, including via the API or ViewComfy apps, is to open the Comfy interface and drop the workflow_api.json file you are trying to run. 
+
+![ComfyUI online worksapce](/public/comfyui_online_workspace.webp)
+
+## Missing nodes 
+If you get an error because some nodes are missing, try installing the appropriate node pack from the manager. Sometimes, you need to search for the node name on Google to find the node pack they belong to. 
+
+![Missing node error](/public/comfy_missing_nodes_error.webp)
+
+## Broken workflow_api.json file
+If the workflow_api.json file looks like this when you open it, it means it didn't export properly:
+
+![Broken workflow_api.json file](/public/broken_workfow_api_file.webp)
+
+This can happen when exporting workflows that contain virtual nodes. The usual culprits are rgtree nodes. The good thing is that those nodes are usually only there for aesthetic reasons and don't fulfil any backend function, so it is easy to fix. 
+ 
+To resolve the problem, try removing the virtual nodes from the workflow and making a new workflow_api.json file. 
+
+## Problem running the workflow
+If you can open the workflow_api.json file and everything looks right, but you still can't run the workflow. You need to have a look at the logs. You can do that straight from Comfy. 
+
+![ComfyUI logs](/public/Comfy_logs.webp)
+
+This will let you see the error that is preventing the workflow from running.  
+
+## The workflow runs in the Comfy interface but not when using the API or a ViewComfy app 
+The first thing to do if this happens is to make sure that the workflow the API or the ViewComfy app is running is the same one you are using in Comfy. 
+
+If they are, then try having a look at the Comfy logs while calling the API or running the ViewComfy app. If you still can't find any clues about what is causing the issues, you can get in touch (team@viewcomfy.com). 

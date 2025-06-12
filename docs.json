@@ -31,7 +31,8 @@
                             "/deployments/create_a_deployment_(deploy_a_workflow)",
                             "/deployments/using_the_manager",
                             "/deployments/adding_models",
-                            "/deployments/updating_the_gpu"
+                            "/deployments/updating_the_gpu",
+                            "/deployments/common_issues"
                         ]
                     },
                     {

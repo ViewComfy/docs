@@ -1,35 +1,43 @@
----
-title: Auto Scaling up and down
----
+The ViewComfy Serverless API can automatically scale up and down based on the demand.
 
-The ViewComfy Serverless API can automatically scales up and down based on the demand.
+The parameters to configure the auto scaling are:
+- **Queue size**: the maximum number of requests that can be queued before a new GPU is turned on, by default it is 1. 
+- **Max number of GPUs**: the maximum number of GPUs that can be turned on at the same time, by default it is 10.
+- **Min number of GPUs**: the minimum number of GPUs that should be turned on, by default it is 0. If this value is greater than 0, new users logging in to your application won't experience a cold start, but billing will be higher.
+- **Idle time**: the number of seconds of idle time before GPUs are turned off, by default it is 30 seconds. This means that a GPU will wait 30 seconds after it is done processing its last request before turning off. If GPUs wait longer before turning off, your users will experience fewer cold starts, but billing will be higher. 
 
-the parameters to configure the auto scaling are:
+New GPUs will turn on automatically when the number of queued requests exceeds the target queue size. Once the infrastructure reaches the set maximum number of GPUs, it will stop scaling, and new requests will be queued. 
 
-- queue size: the number of requests that can be in the queue at the same time.
-- max number of GPUs: the maximum number of GPUs that can be turned on.
-- min number of GPUs: the minimum number of GPUs that can be turned on if this value is greater than 0 your users will never get a cold-start but the billing will be higher.
-- idle time: the number of seconds of idle time before the GPUs are turned off, by default it is 30 seconds.
+When a GPU is idle for longer than the target idle time, it will turn off. Once the infrastructure reaches the set minimum number of GPUs, it will stop scaling down. 
 
-
-The scalability works like this:
-When there is a backlog of inputs enqueued, the number of GPUs scales up automatically. You can configure how many requests will be in the queue until the new GPU turns on.
-
-Example 1:
+## Example 1:
 ```
+Settings:
 queue size: 1
-number of requests in the queue: 10
 max number of GPUs: 4.
 min number of GPUs: 0
+idle time: 30
+
+Event: 
+10 requests come in at the same time.
 ```
 
-Let's say you get 10 requests at the same time. 4 GPUs will be turned on and process the job. Each time a GPU finishes a job, it will get a new one from the queue until there is a threshold of 30 seconds of idle time, at which point they will be shut down until there are 0 GPUs turned on.
+Let’s say you get 10 requests at the same time, and you don't have any GPUs running; 4 GPUs will be turned on right away and process the jobs.
+ 
+Each time a GPU finishes a job, it will get a new one from the queue until the queue is empty. Once the queue is empty, if a GPU is idle for more than 30 seconds it will turn off. This process will repeat itself until all the GPUs are off. 
 
-Example 2:
+
+## Example 2:
 ```
+Settings:
 queue size: 2
-number of requests in the queue: 2
 max number of GPUs: 4.
 min number of GPUs: 0
+idle time: 30
+
+Event: 
+2 requests come in at the same time, followed by 2 others.
 ```
-In this case, because the queue size is not bigger than your queue size, only 1 GPU will be running and the second request will wait until the first 1 finish, if a new request comes in, a new GPU will be turn on and it will start processing jobs in the order they arrived, until there is a threshold of 30 seconds of idle time, at which point they will be shut down until there are 0 GPUs turned on.
+In this case, because the set queue size is not bigger than the number of requests, only 1 GPU will turn on. The second request will wait for the first one to finish before being sent to the same GPU. 
+
+If a new set of 2 requests comes in before the first one is finished, the queue will grow to 3, and a new GPU will be turned on. The jobs will then be processed in the order they arrived until the queue is empty. At this point, the infrastructure will start scaling down until there are no more GPUs running. 

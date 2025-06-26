@@ -1,4 +1,4 @@
-Run the docs locally
+Run the docs locally 
 
 ```bash
 mintlify dev

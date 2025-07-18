@@ -50,17 +50,17 @@
                     {
                         "group": "API",
                         "pages": [
-                            "/new_api/description",
-                            "/new_api/quick_start",
+                            "/viewcomfy_api/description",
+                            "/viewcomfy_api/quick_start",
                             {
                                 "group": "Examples",
                                 "pages": [
-                                    "/new_api/examples/python",
-                                    "/new_api/examples/typescript"
+                                    "/viewcomfy_api/examples/python",
+                                    "/viewcomfy_api/examples/typescript"
                                 ]
                             },
-                            "/new_api/autoscaling",
-                            "/new_api/memory_snapshot"
+                            "/viewcomfy_api/autoscaling",
+                            "/viewcomfy_api/memory_snapshot"
                         ]
                     },
                     {

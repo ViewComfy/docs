@@ -18,6 +18,7 @@ The "App Title" and "App Image URL" allow you to brand your app. Note that you n
 
 The "Title" will be the name of your workflow. If you have multiple ones, they will appear in a drop-down at the top. 
 
+## Link your App with the ViewComfy Cloud API Endpoint
 The "ViewComfy Endpoint" is the API link to your [deployment](/deployments/description). This is required if you are planning to deploy the app on ViewComfy cloud. The deployment is where the workflow will run (ei. generate content).
 
 ![ViewComfy API](/public/viewcomfy_api.webp) 
@@ -49,7 +50,7 @@ We also have a [video guide](https://youtu.be/70h0FUohMlE) on how to do some of 
 }
 ``` 
 
-### Example
+#### Example
 You can download the view_comfy.json file from the editor ("Download as ViewComfy JSON"). 
 
 The section of the json file called "viewComfyJSON" is what defines the UI elements inside the app. More specifically, the "input" and "advancedInputs" sections are the ones that define the parameters.
@@ -300,3 +301,25 @@ And finally, you can rename that input to "Controlnet type" and bring it to the 
     "id": "452c9cee8f9128"
 }
 ```
+### Supported output types 
+  Supported types are rendered by their [mime-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types)
+
+  - Image (image/)
+  - Video (video/)
+  - Audio (audio/)
+  - PSD Files (image/vnd.adobe.photoshop)
+
+#### Example creating a PSD file Output
+
+To create an output that ViewComfy can understand and show in the playground output page, the output must have this shape, and you need to use the `Show Any` custom node
+
+```
+{
+    "type": "output",
+    "filename": "psd_file_name.psd"
+}
+```
+
+You can find the [workflow_api.json here](https://github.com/ViewComfy/cloud-public/tree/main/workflows/psd-file) for making this work with the set of string core nodes
+
+![PSD workflow](/public/viewcomfy_psd.png)

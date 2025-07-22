@@ -311,7 +311,7 @@ And finally, you can rename that input to "Controlnet type" and bring it to the 
 
 #### Example creating a PSD file Output
 
-To create an output that ViewComfy can understand and show in the playground output page, the output must have this shape, and you need to use the `Show Any` custom node
+To create a .psd file that ViewComfy can display in the playground page, you need to connect it to a "Show Any" node and make sure that the output has the following shape.
 
 ```
 {
@@ -320,6 +320,6 @@ To create an output that ViewComfy can understand and show in the playground out
 }
 ```
 
-You can find the [workflow_api.json here](https://github.com/ViewComfy/cloud-public/tree/main/workflows/psd-file) for making this work with the set of string core nodes
+You can find an example workflow_api.json [here](https://github.com/ViewComfy/cloud-public/tree/main/workflows/psd-file) that uses this feature with the string core nodes.
 
 ![PSD workflow](/public/viewcomfy_psd.png)

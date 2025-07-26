@@ -42,6 +42,7 @@ We also have a [video guide](https://youtu.be/70h0FUohMlE) on how to do some of 
 - image
 - audio
 - seed => seed, noise_seed, rand_seed
+- number slider => with min, max and step.
 - select => list of options (label and value) e.g: 
 ```json
 {
@@ -301,6 +302,38 @@ And finally, you can rename that input to "Controlnet type" and bring it to the 
     "id": "452c9cee8f9128"
 }
 ```
+
+#### Example creating a slider input, you need to add a slider object with min, max and step.
+
+```json
+{
+            "title": "KSampler",
+            "inputs": [
+              {
+                "title": "Cfg",
+                "placeholder": "Cfg",
+                "value": 8,
+                "workflowPath": [
+                  "3",
+                  "inputs",
+                  "cfg"
+                ],
+                "helpText": "Helper Text",
+                "valueType": "slider",
+                "slider": {
+                  "min": 1,
+                  "max": 10,
+                  "step": 1
+                },
+                "validations": {
+                  "required": true
+                },
+                "key": "3-inputs-cfg"
+              }
+            ]
+}
+```
+
 ### Supported output types 
   Supported types are rendered by their [mime-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types)
 

@@ -15,7 +15,7 @@
     "seo": {
         "metatags": {
             "og:image": "/public/ViewComfy_logo.webp",
-            "description":"Everything you need to use ViewComfy to scale your ComfyUI operations."
+            "description": "Everything you need to use ViewComfy to scale your ComfyUI operations."
         }
     },
     "navigation": {
@@ -48,7 +48,7 @@
                         ]
                     },
                     {
-                        "group": "API",
+                        "group": "Serverless API",
                         "pages": [
                             "/viewcomfy_api/description",
                             "/viewcomfy_api/quick_start",
@@ -84,6 +84,13 @@
                         "group": "Account",
                         "pages": [
                             "/account/billing"
+                        ]
+                    },
+                    {
+                        "group": "Cloud API",
+                        "pages": [
+                            "/viewcomfy_cloud/description",
+                            "/viewcomfy_cloud/add_models_and_loras"
                         ]
                     },
                     {

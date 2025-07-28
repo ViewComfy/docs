@@ -1,0 +1,23 @@
+1 - Grab your team id from the dashboard by clicking on your team name or selecting "All Projects"  
+2 - make a POST to this endpoint: https://api.viewcomfy.com/api/v1/team/add-models
+with this body:
+
+```json
+{
+    "notification_email": "your@email.com",
+    "team_id": <YOUR_TEAM_ID>,
+    "custom_models": [
+        {
+            "model_url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors",
+            "path": "vae/ae.safetensors",
+            "headers": {
+                "Authorization": "Bearer <YOUR_HF_TOKEN>"
+            }
+        },
+        {
+            "model_url": "https://huggingface.co/lodestones/stable-diffusion-3-medium/resolve/4a708bd3d18c10253247f8660cd4ffae6cd63bf1/stable-diffusion-3-medium/text_encoders/text_encoders.safetensors",
+            "path": "text_encoders/text_encoders.safetensors"
+        }
+    ]
+}
+```

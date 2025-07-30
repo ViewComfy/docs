@@ -310,6 +310,8 @@ And finally, you can rename that input to "Controlnet type" and bring it to the 
 
 #### Create sliders
 
+![ViewComfy slider input](/public/viewcomfy_slider_input.png)
+
 You can create a slider by adding a slider object to a parameter with min, max and step.
 
 ```json
@@ -341,6 +343,65 @@ You can create a slider by adding a slider object to a parameter with min, max a
 }
 ```
 
+#### Input Tooltips
+
+You can add tooltips beside your input to add helpful information to the user
+
+![ViewComfy tooltip input](/public/viewcomfy_tooltip_input.png)
+
+You can add a tooltip by adding a `tooltip` key to a parameter and if you want to add a new line you can add the `\n` 
+
+```json
+
+    {
+        "title": "Seed",
+        "placeholder": "Seed",
+        "value": 40741760227630,
+        "workflowPath": [
+            "3",
+            "inputs",
+            "seed"
+        ],
+        "tooltip": "This is a tooltip\n new line",
+        "helpText": "Helper Text",
+        "valueType": "seed",
+        "validations": {
+            "required": true
+        },
+        "key": "3-inputs-seed"
+    },
+
+```
+
+#### Input Help text
+
+You can add a help text below your input to add guidance information to the user
+
+![ViewComfy helptext input](/public/viewcomfy_helptext_input.png)
+
+You can add a modify `helpText` key of a parameter and if you want to add a new line you can add the `\n` 
+
+```json
+
+    {
+        "title": "Seed",
+        "placeholder": "Seed",
+        "value": 40741760227630,
+        "workflowPath": [
+            "3",
+            "inputs",
+            "seed"
+        ],
+        "helpText": "Helper Text\n new line",
+        "valueType": "seed",
+        "validations": {
+            "required": true
+        },
+        "key": "3-inputs-seed"
+    },
+
+```
+
 ### Supported output types 
   Supported types are rendered by their [mime-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types)
 
@@ -348,6 +409,31 @@ You can create a slider by adding a slider object to a parameter with min, max a
   - Video (video/)
   - Audio (audio/)
   - PSD Files (image/vnd.adobe.photoshop)
+
+#### Compare images side by side
+
+You can compare any two image that you generated
+
+![ViewComfy compare output](/public/viewcomfy_output_compare.png)
+
+![ViewComfy compare images output](/public/viewcomfy_compare_images_output.png)
+
+#### Display the name of the output file
+
+You can enable this option to display the file name in the output section of the playground
+
+![ViewComfy show filename output](/public/viewcomfy_showfilename_output.png)
+
+![ViewComfy show filename full output](/public/viewcomfy_showfilename_full_output.png)
+
+If you surround the file name with `__`, for example: `__text__`, the text between ' __'  will be shown instead.
+- In the case of the SaveImage Node, it will automatically add an _ to the file name, that's why you should only add 1 after the name, like in the picture
+
+
+![ViewComfy show filename filename prefix output](/public/viewcomfy_showfilename_filenameprefix_output.png)
+
+![ViewComfy show filename parsed output](/public/viewcomfy_showfilename_parsed_output.png)
+
 
 #### Example creating a PSD file Output
 

@@ -73,6 +73,13 @@
                         ]
                     },
                     {
+                        "group": "Closed Source Models",
+                        "pages": [
+                            "/closed_source_models/description",
+                            "/closed_source_models/pricing"
+                        ]
+                    },
+                    {
                         "group": "Storage",
                         "pages": [
                             "/storage/description",

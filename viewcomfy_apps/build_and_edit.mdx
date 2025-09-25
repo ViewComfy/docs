@@ -172,7 +172,7 @@ So, for example, you can rename the "CLIP Text Encode (Positive Prompt)" input t
 
 #### Create dropdowns
 
-![ViewComfy dropdown input](/public/viewcomfy_dropdown.png)
+![ViewComfy dropdown input](/public/viewcomfy_dropdown.webp)
 
 You can create a dropdown for the "String" input where users will be able to select between two types of controlnets by changing the value type for that input to "select", and adding a list of option (the label is what will show in the UI and the value is what will be sent to the node.) 
 
@@ -312,7 +312,7 @@ And finally, you can rename that input to "Controlnet type" and bring it to the 
 
 #### Create sliders
 
-![ViewComfy slider input](/public/viewcomfy_slider_input.png)
+![ViewComfy slider input](/public/viewcomfy_slider_input.webp)
 
 You can create a slider by adding a slider object to a parameter with min, max and step.
 
@@ -349,7 +349,7 @@ You can create a slider by adding a slider object to a parameter with min, max a
 
 You can add tooltips beside your input to add helpful information to the user
 
-![ViewComfy tooltip input](/public/viewcomfy_tooltip_input.png)
+![ViewComfy tooltip input](/public/viewcomfy_tooltip_input.webp)
 
 You can add a tooltip by adding a `tooltip` key to a parameter and if you want to add a new line you can add the `\n` 
 
@@ -379,7 +379,7 @@ You can add a tooltip by adding a `tooltip` key to a parameter and if you want t
 
 You can add a help text below your input to add guidance information to the user
 
-![ViewComfy helptext input](/public/viewcomfy_helptext_input.png)
+![ViewComfy helptext input](/public/viewcomfy_helptext_input.webp)
 
 You can add a modify `helpText` key of a parameter and if you want to add a new line you can add the `\n` 
 
@@ -416,25 +416,25 @@ You can add a modify `helpText` key of a parameter and if you want to add a new 
 
 You can compare any two image that you generated
 
-![ViewComfy compare output](/public/viewcomfy_output_compare.png)
+![ViewComfy compare output](/public/viewcomfy_output_compare.webp)
 
-![ViewComfy compare images output](/public/viewcomfy_compare_images_output.png)
+![ViewComfy compare images output](/public/viewcomfy_compare_images_output.webp)
 
 #### Display the name of the output file
 
 You can enable this option to display the file name in the output section of the playground
 
-![ViewComfy show filename output](/public/viewcomfy_showfilename_output.png)
+![ViewComfy show filename output](/public/viewcomfy_showfilename_output.webp)
 
-![ViewComfy show filename full output](/public/viewcomfy_showfilename_full_output.png)
+![ViewComfy show filename full output](/public/viewcomfy_showfilename_full_output.webp)
 
 If you surround the file name with `__`, for example: `__text__`, the text between ' __'  will be shown instead.
 - In the case of the SaveImage Node, it will automatically add an _ to the file name, that's why you should only add 1 after the name, like in the picture
 
 
-![ViewComfy show filename filename prefix output](/public/viewcomfy_showfilename_filenameprefix_output.png)
+![ViewComfy show filename filename prefix output](/public/viewcomfy_showfilename_filenameprefix_output.webp)
 
-![ViewComfy show filename parsed output](/public/viewcomfy_showfilename_parsed_output.png)
+![ViewComfy show filename parsed output](/public/viewcomfy_showfilename_parsed_output.webp)
 
 
 #### Example creating a PSD file Output
@@ -450,4 +450,4 @@ To create a .psd file that ViewComfy can display in the playground page, you nee
 
 You can find an example workflow_api.json [here](https://github.com/ViewComfy/cloud-public/tree/main/workflows/psd-file) that uses this feature with the string core nodes.
 
-![PSD workflow](/public/viewcomfy_psd.png)
+![PSD workflow](/public/viewcomfy_psd.webp)

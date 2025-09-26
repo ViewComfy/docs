@@ -97,7 +97,8 @@
                         "group": "Cloud API",
                         "pages": [
                             "/viewcomfy_cloud/description",
-                            "/viewcomfy_cloud/add_models_and_loras"
+                            "/viewcomfy_cloud/add_models_and_loras",
+                            "/viewcomfy_cloud/inference"
                         ]
                     },
                     {

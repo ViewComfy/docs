@@ -1,0 +1,24 @@
+1 - Grab your API Keys from the dashboard in the "Your Workflows" tab  
+2 - make a GET to this endpoint: `https://api.viewcomfy.com/api/v1/workflow/infer/?prompt_ids=${PROMPT_ID}`  
+3 - The query parameters of this endpoint accept multiple prompt_ids. To send more than one, you need to encode them as a URI  
+4 - When an inference has finished, it will have the property `completed = True` and the `status` can be `success` or `error`  
+5 - If the status is `success` you can grab the files from the outputs property, more information about the model can be found here [TypeScript](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Node-TypeScript/api.ts#L272), [Python](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/api.py#L41)
+
+```typescript snippet.ts
+
+const promptIds = ["123", "564"];
+const clientId = "<YOUR_CLIENT_ID>";
+const clientSecret = "<YOUR_CLIENT_SECRET>";
+
+const urlParams = `?${promptIds.map(id => `prompt_ids=${encodeURIComponent(id)}`).join('&')}`;
+const url = `https://api.viewcomfy.com/api/v1/workflow/infer/${urlParams}`;
+
+const response = await fetch(url, {
+    headers: {
+        "client_id": clientId,
+        "client_secret": clientSecret,
+        "content-type": "application/json"
+    },
+});
+
+```

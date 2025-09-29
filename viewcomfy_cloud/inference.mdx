@@ -11,7 +11,7 @@ const clientId = "<YOUR_CLIENT_ID>";
 const clientSecret = "<YOUR_CLIENT_SECRET>";
 
 const urlParams = `?${promptIds.map(id => `prompt_ids=${encodeURIComponent(id)}`).join('&')}`;
-const url = `https://api.viewcomfy.com/api/v1/workflow/infer/${urlParams}`;
+const url = `https://api.viewcomfy.com/api/workflow/infer/${urlParams}`;
 
 const response = await fetch(url, {
     headers: {

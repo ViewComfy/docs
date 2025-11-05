@@ -48,19 +48,32 @@
                         ]
                     },
                     {
-                        "group": "Serverless API",
+                        "group": "Platform",
                         "pages": [
-                            "/viewcomfy_api/description",
-                            "/viewcomfy_api/quick_start",
                             {
-                                "group": "Examples",
+                                "group": "Serverless API",
                                 "pages": [
-                                    "/viewcomfy_api/examples/python",
-                                    "/viewcomfy_api/examples/typescript"
+                                    "/viewcomfy_api/description",
+                                    "/viewcomfy_api/quick_start",
+                                    {
+                                        "group": "Examples",
+                                        "pages": [
+                                            "/viewcomfy_api/examples/python",
+                                            "/viewcomfy_api/examples/typescript"
+                                        ]
+                                    },
+                                    "/viewcomfy_api/autoscaling",
+                                    "/viewcomfy_cloud/inference",
+                                    "/viewcomfy_api/memory_snapshot"
                                 ]
                             },
-                            "/viewcomfy_api/autoscaling",
-                            "/viewcomfy_api/memory_snapshot"
+                            {
+                                "group": "Cloud API",
+                                "pages": [
+                                    "/viewcomfy_cloud/description",
+                                    "/viewcomfy_cloud/add_models_and_loras"
+                                ]
+                            }
                         ]
                     },
                     {

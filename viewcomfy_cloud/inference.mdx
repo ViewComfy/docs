@@ -1,8 +1,19 @@
+## Inference job with realtime logs
+The API endpoint supports launching an inference job and displaying real-time logs.
+The best way to make this work is to go to our code examples on GitHub [TypeScript](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Node-TypeScript/api.ts#L272), [Python](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/main.py#L14)
+
+## Inference jobs in batch
+The API endpoint supports launching any number of jobs, after the job is scheduled, you will get in return a prompt_id,
+with that prompt_id you can use the query endpoint to get the real-time status of the job and if it's finished to download the assets
+The best way to make this work is to go to our code examples on GitHub [TypeScript](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Node-TypeScript/api.ts#L272), [Python](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/main.py#L99)
+
+## Query the status of a inference job
+
 1 - Grab your API Keys from the dashboard in the "Your Workflows" tab  
-2 - make a GET to this endpoint: `https://api.viewcomfy.com/api/v1/workflow/infer/?prompt_ids=${PROMPT_ID}`  
+2 - make a GET to this endpoint: `https://api.viewcomfy.com/api/workflow/infer/?prompt_ids=${PROMPT_ID}`  
 3 - The query parameters of this endpoint accept multiple prompt_ids. To send more than one, you need to encode them as a URI  
 4 - When an inference has finished, it will have the property `completed = True` and the `status` can be `success` or `error`  
-5 - If the status is `success` you can grab the files from the outputs property, more information about the model can be found here [TypeScript](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Node-TypeScript/api.ts#L272), [Python](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/api.py#L41)
+5 - If the status is `success` you can grab the files from the outputs property, more information about the model can be found here [TypeScript](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Node-TypeScript/api.ts#L272), [Python](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/main.py#L99)
 
 ```typescript snippet.ts
 
@@ -22,3 +33,7 @@ const response = await fetch(url, {
 });
 
 ```
+## Cancel an inference job
+You can cancel an ongoing inference job by calling this endpoint, you need to use the prompt_id that was returned from 
+calling the launch of the inference job
+The best way to make this work is to go to our code examples in GitHub [TypeScript](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Node-TypeScript/api.ts#L272), [Python](https://github.com/ViewComfy/cloud-public/blob/main/ViewComfy_API/Python/main.py#L135)

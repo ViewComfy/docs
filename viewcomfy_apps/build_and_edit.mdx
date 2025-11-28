@@ -1,5 +1,9 @@
 Building a ViewComfy app is a simple process and can be done via our online [editor](https://editor.viewcomfy.com/) or locally with our [open source solution](https://github.com/ViewComfy/ViewComfy). 
 
+We have two video guides to help people get started: 
+- [Making your first app](https://youtu.be/Su_rbjodvEI)
+- [Using the ViewComfy Utils node pack to build advanced apps](https://youtu.be/kMSHMvVe-W8)
+
 ## Building the app
 
 To get started, you need to use the workflow_api.json file from the workflow you want to turn into an app. There are more details on how to get that file [here](/deployments/create_a_deployment_(deploy_a_workflow)). 
@@ -29,9 +33,7 @@ You can also add preview images to show your users the kind of output the app wi
 
 ## Editing the app (Advanced) 
 
-It is also possible to make more advanced edits to the apps by making changes directly in the view_comfy.json file. If you use Cursor, you can use our [Cursor Rule](https://github.com/ViewComfy/ViewComfy/blob/main/.cursor/rules/view-comfy-json-rules.mdc) to help you. (we have some examples on how to do that [here](https://www.viewcomfy.com/blog/comfyui-to-web-app-in-less-than-5-minutes)).
-
-We also have a [video guide](https://youtu.be/70h0FUohMlE) on how to do some of those advanced edits. 
+It is also possible to make more advanced edits to the apps by making changes directly in the view_comfy.json file. If you use Cursor, you can use our [Cursor Rule](https://github.com/ViewComfy/ViewComfy/blob/main/.cursor/rules/view-comfy-json-rules.mdc) to help you. (We have some examples on how to do that [here](https://www.viewcomfy.com/blog/comfyui-to-web-app-in-less-than-5-minutes)).
 
 ### Supported input types 
 - text
@@ -174,7 +176,7 @@ So, for example, you can rename the "CLIP Text Encode (Positive Prompt)" input t
 
 ![ViewComfy dropdown input](/public/viewcomfy_dropdown.webp)
 
-You can create a dropdown for the "String" input where users will be able to select between two types of controlnets by changing the value type for that input to "select", and adding a list of option (the label is what will show in the UI and the value is what will be sent to the node.) 
+You can create a dropdown for the "String" input where users will be able to select between two types of controlnets by changing the value type for that input to "select", and adding a list of options (the label is what will show in the UI and the value is what will be sent to the node.) 
 
 
 ```javascript Dropdown lines
@@ -381,7 +383,7 @@ You can add a help text below your input to add guidance information to the user
 
 ![ViewComfy helptext input](/public/viewcomfy_helptext_input.webp)
 
-You can add a modify `helpText` key of a parameter and if you want to add a new line you can add the `\n` 
+You can add or modify `helpText` key of a parameter and if you want to add a new line you can add the `\n` 
 
 ```json
 
@@ -414,7 +416,7 @@ You can add a modify `helpText` key of a parameter and if you want to add a new 
 
 #### Compare images side by side
 
-You can compare any two image that you generated
+You can compare any two images that you generated
 
 ![ViewComfy compare output](/public/viewcomfy_output_compare.webp)
 

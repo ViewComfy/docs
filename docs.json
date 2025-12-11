@@ -38,7 +38,8 @@
                             "/deployments/using_the_manager",
                             "/deployments/adding_models",
                             "/deployments/updating_the_gpu",
-                            "/deployments/common_issues"
+                            "/deployments/common_issues",
+                            "/deployments/default_nodes"
                         ]
                     },
                     {

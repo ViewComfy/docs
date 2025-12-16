@@ -4,7 +4,8 @@ The parameters to configure the auto scaling are:
 - **Queue size**: the maximum number of requests that can be queued before a new GPU is turned on, by default it is 1. 
 - **Max number of GPUs**: the maximum number of GPUs that can be turned on at the same time, by default it is 1.
 - **Min number of GPUs**: the minimum number of GPUs that should be turned on, by default it is 0. If this value is greater than 0, new users logging in to your application won't experience a cold start, but billing will be higher.
-- **Idle time**: the number of seconds of idle time before GPUs are turned off, by default it is 30 seconds. This means that a GPU will wait 30 seconds after it is done processing its last request before turning off. If GPUs wait longer before turning off, your users will experience fewer cold starts, but billing will be higher. 
+- **Idle time**: the number of seconds of idle time before GPUs are turned off, by default it is 30 seconds. This means that a GPU will wait 30 seconds after it is done processing its last request before turning off. If GPUs wait longer before turning off, your users will experience fewer cold starts, but billing will be higher.
+- **Min number of warm GPUs**: the number of buffer GPUs that should be available when the infrastructure is active. This setting does not prevent the number of GPUs from dropping to zero, but it ensures that additional GPUs will be activated when some are in use. These extra GPUs help manage spikes in demand and reduce the likelihood of users encountering cold starts.
 
 New GPUs will turn on automatically when the number of queued requests exceeds the target queue size. Once the infrastructure reaches the set maximum number of GPUs, it will stop scaling, and new requests will be queued. 
 

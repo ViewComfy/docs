@@ -1,0 +1,14 @@
+To make a request using a different workflow than the one you used when creating a deployment, you can use the override_workflow_api_path property.
+
+After extracting the new workflow_api.json file, you simply need to add the correct path to the property.
+
+```python
+override_workflow_api_path = "<path_to_your_new_workflow_api_file>"
+```
+
+The key things to pay attention to when using this approach are that: 
+1. The new workflow needs to be able to run on the deployment you are calling with the API. (ei. all the nodes, models and other dependencies need to be installed). See the “Deploy your workflow” section for information on how to install new nodes and models to a deployment. 
+2. The keys for the parameters inside the workflow might change, even if the new workflow is very similar to the old one. If that is the case, you will need to update the keys you are using to update the parameters when calling the API. 
+ 
+
+

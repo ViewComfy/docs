@@ -106,16 +106,4 @@ outputs (List[Dict], optional): List of output file data. Defaults to empty list
 ```
 
 
-### 5. Advanced Usage: Overwrite the deployed workflow
 
-So far we’ve seen how to make an API request to the workflow you uploaded when deploying. In this section, we will go over how to make a request using a different workflow. This approach will work with any workflow that can run on your deployment, so make sure you have installed all nodes and models you need to run the new workflow. (see the “Deploy your workflow” section for information on how to install new nodes and models to a deployment)
-
-The first step is to extract the workflow_api.json file for the new workflow. In this case, I will use this file, which is my Wan 2.1 workflow with the addition of a LoRA. You can then add the path to the new workflow_api.json file to “override_workflow_api”:
-
-```python
-override_workflow_api_path = "<path_to_your_new_workflow_api_file>"
-```
-From that point onward, you can follow the steps from the previous section to get the parameters from the workflow and make the API call.
-
-
-# Code Examples

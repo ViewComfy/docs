@@ -20,16 +20,39 @@ After clicking "Save changes", you can add more workflows to the same app by usi
 
 The "App Title" and "App Image URL" allow you to brand your app. Note that you need to provide a URL for the image, meaning it needs to be hosted somewhere. 
 
-The "Title" will be the name of your workflow. If you have multiple ones, they will appear in a drop-down at the top. 
+The "Title" will be the name of your workflow. If you have multiple ones, they will appear in a dropdown at the top. 
 
 ## Link your App with the ViewComfy Cloud API Endpoint
-The "ViewComfy Endpoint" is the API link to your [deployment](/deployments/description). This is required if you are planning to deploy the app on ViewComfy cloud. The deployment is where the workflow will run (ei. generate content).
+The "ViewComfy Endpoint" is the API link to your [deployment](/deployments/description). The deployment is where the workflow you used to make the app will run (ei. generate content).
+
+With the latest update of our cloud, you can simply select the name of the deployment you want to use to run your workflow using the dropdown. Alternatively, you can get the endpoint from your workflow dashboard.
+
 
 ![ViewComfy API](/public/viewcomfy_api.webp) 
 
 By default, the editor will load all the parameters in the workflow. You can remove parameters by clicking the bin icon next to each of them. 
 
 You can also add preview images to show your users the kind of output the app will generate. Again, you will need a URL to add the images.  
+
+
+## Editing inputs
+In the app editor, you can delete the parameters you don't want to expose, update default values and control the way your inputs will be displayed. 
+
+To update the default value of an input you don't want to expose in the UI, you need to hide it instead of deleting it. Deleting it will revert to the value that was saved in the workflow_api file you used to create the app. 
+
+Using the input menu, you can change the following input properties:
+- input name (label)
+- input type
+- validation values 
+- default values (in cases where you want to expose the input to the user)
+- add help text, tooltip and custom error messages
+
+![ViewComfy App Editor input menu](/public/input_menu.webp) 
+
+## Using the mask editor 
+To allow your users to apply a mask on the images they use as input, you need to select the "Image with Mask Editor" input type. This input type behaves the same way as the load image node in ComfyUI. 
+
+![ViewComfy App Mask Editor](/public/mask_editor.webp) 
 
 ## Editing the app (Advanced) 
 

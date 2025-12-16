@@ -83,6 +83,7 @@
                             "/viewcomfy_apps/description",
                             "/viewcomfy_apps/build_and_edit",
                             "/viewcomfy_apps/deploy",
+                            "/viewcomfy_apps/app_hub",
                             "/viewcomfy_apps/share"
                         ]
                     },

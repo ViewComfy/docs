@@ -84,7 +84,8 @@
                             "/viewcomfy_apps/build_and_edit",
                             "/viewcomfy_apps/deploy",
                             "/viewcomfy_apps/app_hub",
-                            "/viewcomfy_apps/share"
+                            "/viewcomfy_apps/share",
+                            "/viewcomfy_apps/utils_node_pack"
                         ]
                     },
                     {

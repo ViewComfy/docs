@@ -56,7 +56,7 @@
                                 "pages": [
                                     "/viewcomfy_api/description",
                                     "/viewcomfy_api/quick_start",
-                                    "/viewcomfy_api/updating_workflow",
+                                    "/viewcomfy_api/updating_workflows",
                                     {
                                         "group": "Examples",
                                         "pages": [

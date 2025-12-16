@@ -54,6 +54,61 @@ To allow your users to apply a mask on the images they use as input, you need to
 
 ![ViewComfy App Mask Editor](/public/mask_editor.webp) 
 
+## managing outputs
+  Supported output types are rendered by their [mime-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types)
+
+  - Image (image/)
+  - Video (video/)
+  - Audio (audio/)
+  - Text (.txt)
+  - PSD Files (image/vnd.adobe.photoshop)
+
+#### Compare images side by side
+
+You can compare any two images using the compare output feature
+
+![ViewComfy compare output](/public/viewcomfy_output_compare.webp)
+
+![ViewComfy compare images output](/public/viewcomfy_compare_images_output.webp)
+
+#### Display text
+
+To display text, you need to save the text in your workflow using the "save text" node from our [utils node pack](/viewcomfy_apps/utils_node_pack) and enable text output in the app editor. 
+
+![Enable text output in your apps](/public/enable_text_output_checkbox.webp)
+
+#### Display the name of the output file
+
+You can enable this option to display the file name in the output section of the playground
+
+![ViewComfy show filename output](/public/viewcomfy_showfilename_output.webp)
+
+![ViewComfy show filename full output](/public/viewcomfy_showfilename_full_output.webp)
+
+If you surround the file name with `__`, for example: `__text__`, the text between ' __'  will be shown instead.
+- In the case of the SaveImage Node, it will automatically add an _ to the file name, that's why you should only add 1 after the name, like in the picture
+
+
+![ViewComfy show filename filename prefix output](/public/viewcomfy_showfilename_filenameprefix_output.webp)
+
+![ViewComfy show filename parsed output](/public/viewcomfy_showfilename_parsed_output.webp)
+
+
+#### Example creating a PSD file Output
+
+To create a .psd file that ViewComfy can display in the playground page, you need to connect it to a "Show Any" node and make sure that the output has the following shape.
+
+```
+{
+    "type": "output",
+    "filename": "psd_file_name.psd"
+}
+```
+
+You can find an example workflow_api.json [here](https://github.com/ViewComfy/cloud-public/tree/main/workflows/psd-file) that uses this feature with the string core nodes.
+
+![PSD workflow](/public/viewcomfy_psd.webp)
+
 ## Editing the app (Advanced) 
 
 It is also possible to make more advanced edits to the apps by making changes directly in the view_comfy.json file. If you use Cursor, you can use our [Cursor Rule](https://github.com/ViewComfy/ViewComfy/blob/main/.cursor/rules/view-comfy-json-rules.mdc) to help you. (We have some examples on how to do that [here](https://www.viewcomfy.com/blog/comfyui-to-web-app-in-less-than-5-minutes)).
@@ -428,51 +483,3 @@ You can add or modify `helpText` key of a parameter and if you want to add a new
     },
 
 ```
-
-### Supported output types 
-  Supported types are rendered by their [mime-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types)
-
-  - Image (image/)
-  - Video (video/)
-  - Audio (audio/)
-  - PSD Files (image/vnd.adobe.photoshop)
-
-#### Compare images side by side
-
-You can compare any two images that you generated
-
-![ViewComfy compare output](/public/viewcomfy_output_compare.webp)
-
-![ViewComfy compare images output](/public/viewcomfy_compare_images_output.webp)
-
-#### Display the name of the output file
-
-You can enable this option to display the file name in the output section of the playground
-
-![ViewComfy show filename output](/public/viewcomfy_showfilename_output.webp)
-
-![ViewComfy show filename full output](/public/viewcomfy_showfilename_full_output.webp)
-
-If you surround the file name with `__`, for example: `__text__`, the text between ' __'  will be shown instead.
-- In the case of the SaveImage Node, it will automatically add an _ to the file name, that's why you should only add 1 after the name, like in the picture
-
-
-![ViewComfy show filename filename prefix output](/public/viewcomfy_showfilename_filenameprefix_output.webp)
-
-![ViewComfy show filename parsed output](/public/viewcomfy_showfilename_parsed_output.webp)
-
-
-#### Example creating a PSD file Output
-
-To create a .psd file that ViewComfy can display in the playground page, you need to connect it to a "Show Any" node and make sure that the output has the following shape.
-
-```
-{
-    "type": "output",
-    "filename": "psd_file_name.psd"
-}
-```
-
-You can find an example workflow_api.json [here](https://github.com/ViewComfy/cloud-public/tree/main/workflows/psd-file) that uses this feature with the string core nodes.
-
-![PSD workflow](/public/viewcomfy_psd.webp)

@@ -1,6 +1,17 @@
-1 - Grab your team id from the dashboard by clicking on your team name or selecting "All Projects"  
-2 - make a POST to this endpoint: `https://api.viewcomfy.com/api/team/add-models`
-with this body:
+1. Grab your team id from the dashboard by clicking on your team name or selecting "All Projects" 
+2. Get your API keys (client id and client secret) from the "Your Workflows" tab of the dashboard. 
+3. Make a POST to this endpoint: `https://api.viewcomfy.com/api/v1/team/add-models`
+
+**Headers:**
+```json
+{
+    "client_id": <YOUR_CLIENT_ID>,
+    "client_secret": <YOUR_CLIENT_SECRET>,
+    "Content-Type": "application/json"
+}
+```
+
+**Body:**
 
 ```json
 {
